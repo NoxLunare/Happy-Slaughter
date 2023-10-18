@@ -6,17 +6,22 @@ public class Player_Movement : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] float movementSpeed = 6f;
+
+    public CharacterController characterController;
     private void Start()
     {
-        rb= GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal") * movementSpeed;
+        float verticalInput = Input.GetAxis("Vertical") * movementSpeed;
 
-        rb.velocity =new Vector3 (horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
+        Vector3 move = new Vector3 (horizontalInput,0 ,verticalInput);    
+        characterController.Move(move * Time.deltaTime);
+     
 
     }
 }
