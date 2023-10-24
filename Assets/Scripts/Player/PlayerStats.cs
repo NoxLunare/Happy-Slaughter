@@ -5,13 +5,18 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public Slider healthSlider;
+
     public float health;
+
+    public float maxHealth = 100f;
+ 
+
     void Start()
     {
-        
+        health = maxHealth;
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         ConnectFloatToSlider();
@@ -20,7 +25,7 @@ public class PlayerStats : MonoBehaviour
 
     public void HealthController()
     {
-        healthSlider.value = health;
+        healthSlider.value = health / maxHealth;
 
         if (health > 100)
         {
