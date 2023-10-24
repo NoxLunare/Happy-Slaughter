@@ -5,12 +5,11 @@ public class TriggerDamager : MonoBehaviour
    [SerializeField] PlayerStats playerStats;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag =="Player")
+        if (other.tag == "Player")
         {
-            playerStats.health -= Random.Range(10,30);
-        
+            playerStats.health -= 4 * Time.deltaTime;
         }
     }
 }

@@ -46,6 +46,6 @@ public class PlayerStats : MonoBehaviour
 
     public void Die()
     {
-
+        Destroy(gameObject,2);
     }
 }
