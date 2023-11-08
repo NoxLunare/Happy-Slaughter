@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    Rigidbody rb;
     [SerializeField] float movementSpeed = 6f;
+
+    private float horizontal;
+    private float vertical;
 
     public CharacterController characterController;
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal") * movementSpeed;
-        float verticalInput = Input.GetAxis("Vertical") * movementSpeed;
+         horizontal = Input.GetAxis("Horizontal") * movementSpeed;
+         vertical = Input.GetAxis("Vertical") * movementSpeed;
 
-        Vector3 move = new Vector3 (horizontalInput,0 ,verticalInput);    
-        characterController.Move(move * Time.deltaTime);
-     
-
+         Vector3 move = new Vector3 (horizontal, 0 , vertical);
+         characterController.Move(move * Time.deltaTime);
+    
     }
 }
