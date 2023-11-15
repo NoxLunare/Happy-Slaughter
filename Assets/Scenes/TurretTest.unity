@@ -181,14 +181,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 938650173006555802, guid: efa56f774e65164429d1b73fb8d0a938, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 124181835}
+      addedObject: {fileID: 124181837}
   m_SourcePrefab: {fileID: 100100000, guid: efa56f774e65164429d1b73fb8d0a938, type: 3}
 --- !u!1 &124181834 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 938650173006555802, guid: efa56f774e65164429d1b73fb8d0a938, type: 3}
   m_PrefabInstance: {fileID: 124181833}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &124181835
+--- !u!4 &124181836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3155242800402198782, guid: efa56f774e65164429d1b73fb8d0a938, type: 3}
+  m_PrefabInstance: {fileID: 124181833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &124181837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,11 +206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 550452926}
---- !u!4 &124181836 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3155242800402198782, guid: efa56f774e65164429d1b73fb8d0a938, type: 3}
-  m_PrefabInstance: {fileID: 124181833}
-  m_PrefabAsset: {fileID: 0}
+  bulletPerfab: {fileID: 7958665212907937040, guid: 7b0968cf48aecaf41943bb44495db96e, type: 3}
+  firePoint: {fileID: 124181836}
+  fireRate: 2
 --- !u!1 &280451674
 GameObject:
   m_ObjectHideFlags: 0
