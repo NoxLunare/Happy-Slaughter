@@ -12,15 +12,15 @@ public class MoneyController : MonoBehaviour
 
     private string moneyName;
    
+  
    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            addMoney++;
             moneyText.text = addMoney.ToString();
+            addMoney++;
             moneyName = moneyText.text = addMoney + " $ ";
             Destroy(money);
-          
         }
     }
 }
