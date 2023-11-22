@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+    
     }
 
   
@@ -25,7 +26,6 @@ public class PlayerStats : MonoBehaviour
 
     public void HealthController()
     {
-        healthSlider.value = health / maxHealth;
 
         if (health > 100)
         {
