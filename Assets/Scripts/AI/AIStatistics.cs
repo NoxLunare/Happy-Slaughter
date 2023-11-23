@@ -31,5 +31,6 @@ public class AIStatistics : MonoBehaviour
     {
         Vector3 spawnDrop = gameObject.transform.position;
         GameObject newDrop = Instantiate(moneyPrefab, spawnDrop, Quaternion.identity);
+        Destroy(newDrop,15);
     }
 }
