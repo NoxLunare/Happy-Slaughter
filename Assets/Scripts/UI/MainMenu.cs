@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,7 +7,7 @@ public class MainMenu : MonoBehaviour
     public Dropdown dropdownResolution;
 
     private int screenWidth = Screen.width;
-    private int screenHigh = Screen.height;
+    private int screenHeight = Screen.height;
 
     public void StartGame()
     {
@@ -44,24 +41,36 @@ public class MainMenu : MonoBehaviour
 
     public void ToogleFulscreen()
     {
-        Screen.fullScreen = !Screen.fullScreen; 
+        if (toggleFullscreen.isOn)
+        {
+            Screen.fullScreen = true;
+        }
+        else if (toggleFullscreen.isOn == false)
+        {
+            Screen.fullScreen= false;   
+        }
     }
 
-    public void DropDownResolution(int index)
+    public void DropDownResolution()
     {
-        switch (index)
+        switch (dropdownResolution.value)
         {
             case 0:
                 screenWidth = 1920;
-                screenHigh = 1080;
+                screenHeight = 1080;
                 break;
             case 1:
                 screenWidth = 2560;
-                screenHigh = 1440;
+                screenHeight = 1440;
                 break;
             case 2:
                 screenWidth = 3840;
-                screenHigh = 2160;
+                screenHeight = 2160;
+                break;
+
+            default:
+                screenWidth = 1920;
+                screenHeight = 1080;
                 break;
         }
     }

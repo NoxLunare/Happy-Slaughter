@@ -416,7 +416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 122.95032, y: -61.892822}
+  m_AnchoredPosition: {x: 122.950195, y: -61.892822}
   m_SizeDelta: {x: 245.9006, y: 123.7857}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &197954306
@@ -2430,13 +2430,14 @@ GameObject:
   - component: {fileID: 2116692112}
   - component: {fileID: 2116692111}
   - component: {fileID: 2116692110}
-  - component: {fileID: 2116692113}
-  - component: {fileID: 2116692116}
   - component: {fileID: 2116692115}
   - component: {fileID: 2116692114}
+  - component: {fileID: 2116692113}
+  - component: {fileID: 2116692116}
+  - component: {fileID: 2116692117}
   m_Layer: 0
   m_Name: Enemy_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2575,6 +2576,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1207688338}
   damage: 2
+--- !u!114 &2116692117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116692108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c23c3967b66ef44890016dd1fa9cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
