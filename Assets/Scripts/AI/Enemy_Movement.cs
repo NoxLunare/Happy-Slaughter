@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class AIController : MonoBehaviour
 {
 
-    public Transform Player;
+    public Transform player;
     int MoveSpeed = 4;
     int MaxDist = 10;
     int MinDist = 1;
@@ -15,21 +15,21 @@ public class AIController : MonoBehaviour
 
     void Start()
     {
-
+        player = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     void Update()
     {
-        transform.LookAt(Player);
+        transform.LookAt(player);
 
-        if (Vector3.Distance(transform.position, Player.position) >= MinDist)
+        if (Vector3.Distance(transform.position, player.position) >= MinDist)
         {
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 
 
 
-            if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+            if (Vector3.Distance(transform.position, player.position) <= MaxDist)
             {
                 //Here Call any function U want Like Shoot at here or something
             }

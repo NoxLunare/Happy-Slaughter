@@ -11,5 +11,7 @@ public class MoneyController : MonoBehaviour
     {
         moneyText.text = addMoney.ToString() + "$";
     }
+
+
    
 }

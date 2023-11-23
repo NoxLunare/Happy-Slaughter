@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AIStatistics : MonoBehaviour
 {
+    public GameObject moneyPrefab;
+
     public int health;
     public int maxHealth = 100;
 
@@ -19,8 +21,15 @@ public class AIStatistics : MonoBehaviour
     {
         if (health <= 0)
         {
+            DropMoney();    
             health = 0;
             Destroy(gameObject);    
         }
+    }
+
+    public void DropMoney()
+    {
+        Vector3 spawnDrop = gameObject.transform.position;
+        GameObject newDrop = Instantiate(moneyPrefab, spawnDrop, Quaternion.identity);
     }
 }

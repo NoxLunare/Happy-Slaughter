@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6777295519077565066}
   - component: {fileID: 7885037858276664317}
   - component: {fileID: 8644947970171746631}
-  - component: {fileID: 4069392498890700691}
+  - component: {fileID: 2841637702477697945}
+  - component: {fileID: -3382683458848233929}
   m_Layer: 0
   m_Name: Money
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.306, z: 0}
-  m_LocalScale: {x: 0.5927, y: 0.010328983, z: 0.5927}
+  m_LocalScale: {x: 0.94406253, y: 0.010328983, z: 0.5927}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,7 +107,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4069392498890700691
+--- !u!114 &2841637702477697945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +116,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 4877132445325463441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996fe00372e493b498519c6d8bd0e7d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3046f16abd8941a4cbd993403b4cff75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: {fileID: 4877132445325463441}
-  moneyText: {fileID: 0}
-  addMoney: 0
+  moneyController: {fileID: 0}
+  speed: 100
+--- !u!54 &-3382683458848233929
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4877132445325463441}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
