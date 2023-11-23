@@ -273,29 +273,14 @@ GameObject:
   - component: {fileID: 158934466}
   - component: {fileID: 158934465}
   - component: {fileID: 158934464}
-  - component: {fileID: 158934463}
+  - component: {fileID: 158934468}
   m_Layer: 0
   m_Name: Money (1)
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &158934463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158934462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996fe00372e493b498519c6d8bd0e7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: {fileID: 158934462}
-  moneyText: {fileID: 197954306}
-  addMoney: 0
 --- !u!135 &158934464
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -382,6 +367,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &158934468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158934462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3046f16abd8941a4cbd993403b4cff75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyController: {fileID: 1962586189}
 --- !u!1 &197954304
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,29 +893,14 @@ GameObject:
   - component: {fileID: 806609611}
   - component: {fileID: 806609610}
   - component: {fileID: 806609609}
-  - component: {fileID: 806609608}
+  - component: {fileID: 806609613}
   m_Layer: 0
   m_Name: Money
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &806609608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806609607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996fe00372e493b498519c6d8bd0e7d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: {fileID: 806609607}
-  moneyText: {fileID: 197954306}
-  addMoney: 0
 --- !u!135 &806609609
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1004,6 +987,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &806609613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806609607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3046f16abd8941a4cbd993403b4cff75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyController: {fileID: 1962586189}
 --- !u!1 &855202128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,6 +2241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1962586188}
   - component: {fileID: 1962586187}
+  - component: {fileID: 1962586189}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2281,6 +2278,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1962586189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962586186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d046ba6a72a03174b9480ec4b204fff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyText: {fileID: 197954306}
+  addMoney: 0
 --- !u!1001 &2068266955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2300,7 +2311,7 @@ PrefabInstance:
     - target: {fileID: 731638981186808834, guid: 8db1a7080ce1eaf4d87af6ae74689930, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1962586187}
     - target: {fileID: 731638981186808834, guid: 8db1a7080ce1eaf4d87af6ae74689930, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
