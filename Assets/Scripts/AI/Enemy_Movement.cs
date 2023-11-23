@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class AIController : MonoBehaviour
+public class Enemy_Movement : MonoBehaviour
 {
 
     public Transform player;
     int MoveSpeed = 4;
     int MaxDist = 10;
     int MinDist = 1;
-
-
 
 
     void Start()

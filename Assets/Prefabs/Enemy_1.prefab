@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1497967166086515184}
   - component: {fileID: 8012111732790957887}
   - component: {fileID: 2262160486602228335}
-  - component: {fileID: 5650603811641531303}
   - component: {fileID: 5077414579631743411}
   - component: {fileID: 3887843605883015571}
+  - component: {fileID: -9162322221798872802}
   m_Layer: 0
   m_Name: Enemy_1
   m_TagString: Enemy
@@ -130,19 +130,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5650603811641531303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2583373933189421852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59a78305e48b4704ca4ad0ba3e3c6cf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &5077414579631743411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,3 +159,16 @@ MonoBehaviour:
   moneyPrefab: {fileID: 4877132445325463441, guid: df45b0d63f1121e4ebbcbb55785d8eaa, type: 3}
   health: 0
   maxHealth: 100
+--- !u!114 &-9162322221798872802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583373933189421852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a78305e48b4704ca4ad0ba3e3c6cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
