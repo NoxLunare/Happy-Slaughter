@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Toggle toggleFullscreen;
-    public Dropdown dropdownResolution;
+    public TMP_Dropdown dropdownResolution;
 
     private int screenWidth = Screen.width;
     private int screenHeight = Screen.height;

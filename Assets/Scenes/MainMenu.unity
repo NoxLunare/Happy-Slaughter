@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleFullscreen: {fileID: 1198743924}
-  dropdownResolution: {fileID: 0}
+  dropdownResolution: {fileID: 1902631815}
 --- !u!1 &97323753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,7 +3433,7 @@ MonoBehaviour:
       - m_Target: {fileID: 93886171}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: DropDownResolution
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
