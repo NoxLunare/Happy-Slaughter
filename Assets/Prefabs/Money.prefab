@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyController: {fileID: 0}
   speed: 100
+  audioSource: {fileID: 0}
 --- !u!54 &-3382683458848233929
 Rigidbody:
   m_ObjectHideFlags: 0
