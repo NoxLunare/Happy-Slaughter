@@ -13,7 +13,7 @@ public class AIStatistics : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
-        sliderHp.value = maxHealth;
+       
     }
 
     private void Update()
@@ -24,6 +24,12 @@ public class AIStatistics : MonoBehaviour
 
     public void HealthController()
     {
+
+        if (health > 0)
+        {
+            sliderHp.value = maxHealth;
+        }
+
         if (health <= 0)
         {
             DropMoney();    
