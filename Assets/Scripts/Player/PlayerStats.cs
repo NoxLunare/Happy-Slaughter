@@ -26,10 +26,7 @@ public class PlayerStats : MonoBehaviour
 
     public void HealthController()
     {
-        if (health < 100)
-        {
-            healthSlider.value = health;
-        }
+        healthSlider.value = health;
 
         if (health > maxHealth)
         {
