@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AIStatistics : MonoBehaviour
 {
     public GameObject moneyPrefab;
+
+    public Slider sliderHp;
 
     public int health;
     public int maxHealth = 100;
@@ -10,11 +13,13 @@ public class AIStatistics : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        sliderHp.value = maxHealth;
     }
 
     private void Update()
     {
         HealthController();
+        sliderHp.value = health;
     }
 
     public void HealthController()
