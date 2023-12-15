@@ -25,6 +25,7 @@ public class PauseGame : MonoBehaviour
         {
             isActive = !isActive;
             Time.timeScale = isActive ? 0:1;
+            Cursor.visible = isActive;
             scenePauseGame.SetActive(isActive);
             playerUI.SetActive(!isActive);
         }
@@ -32,6 +33,7 @@ public class PauseGame : MonoBehaviour
 
     public void ResumeGame()
     {
+        Cursor.visible = false;
         scenePauseGame.SetActive(!isActive);
         playerUI.SetActive(isActive);
         Time.timeScale = 1.0f;

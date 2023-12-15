@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class WeaponController : MonoBehaviour
 {
+    [SerializeField] GameObject light;
     [SerializeField] Transform bulletPrefab;
     [SerializeField] Transform bulletSpawnerTransform;
 
@@ -14,7 +15,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private int maxAmmo = 60;
 
     private bool canShoot = false;
-
+    private bool isLight = false;
     private void Start()
     {
         ammo = maxAmmo;
@@ -27,8 +28,11 @@ public class WeaponController : MonoBehaviour
 
     public void ShootController()
     {
+       
         if (Input.GetMouseButtonDown(0))
         {
+            isLight =! isLight;
+            light.SetActive(isLight);
             AmmoController();
         }
     }
