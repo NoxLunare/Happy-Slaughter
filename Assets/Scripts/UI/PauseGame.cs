@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseGame : MonoBehaviour
 {
+    public PlayerLookArround playerLookArround;
+
     public GameObject scenePauseGame;
     public GameObject playerUI;
 
@@ -26,6 +25,7 @@ public class PauseGame : MonoBehaviour
             isActive = !isActive;
             Time.timeScale = isActive ? 0:1;
             Cursor.visible = isActive;
+            playerLookArround.enabled = !isActive;
             scenePauseGame.SetActive(isActive);
             playerUI.SetActive(!isActive);
         }
@@ -36,6 +36,7 @@ public class PauseGame : MonoBehaviour
         Cursor.visible = false;
         scenePauseGame.SetActive(!isActive);
         playerUI.SetActive(isActive);
+        playerLookArround.enabled = true;
         Time.timeScale = 1.0f;
     }
 
