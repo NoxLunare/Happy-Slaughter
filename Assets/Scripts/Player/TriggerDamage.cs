@@ -9,7 +9,7 @@ public class TriggerDamager : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerStats.health -= 4 * Time.deltaTime;
+            playerStats.currentHealth -= 4 * Time.deltaTime;
         }
     }
 }

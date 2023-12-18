@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    public static BulletController Instance;
     [SerializeField] float velocity;
     [SerializeField] new Rigidbody rigidbody;
-    [SerializeField] int damage;
+    public int damage;
 
-    private void Awake(){
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+       
+
         rigidbody.velocity=transform.forward*velocity;
         Destroy(gameObject, 5f);
     }

@@ -15,7 +15,7 @@ public class AIDamage : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerStats.health -= damage;
+            playerStats.currentHealth -= damage;
         }
     }
 }

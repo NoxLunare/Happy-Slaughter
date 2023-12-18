@@ -25,7 +25,7 @@ public class ShopItems : MonoBehaviour
     {
         if (MoneyController.Instance.addMoney >= priceSmallHealthItem)
         {
-            if (PlayerStats.Instance.health < 100)
+            if (PlayerStats.Instance.currentHealth < 100)
             {
                 CurrentItemShop(itemShop.smallBatteryHealth);
             }
@@ -36,7 +36,7 @@ public class ShopItems : MonoBehaviour
     {
         if (MoneyController.Instance.addMoney >= pricesBigHealthItem)
         {
-            if (PlayerStats.Instance.health < 100)
+            if (PlayerStats.Instance.currentHealth < 100)
             {
                 CurrentItemShop(itemShop.bigBatteryHealth);
             }
@@ -55,13 +55,13 @@ public class ShopItems : MonoBehaviour
         {
             case itemShop.smallBatteryHealth:
                 priceSmallHealthItemText.text = priceSmallHealthItem.ToString() + " $";
-                PlayerStats.Instance.health += takeSmallBaterryHealth;
+                PlayerStats.Instance.currentHealth += takeSmallBaterryHealth;
                 MoneyController.Instance.addMoney -= priceSmallHealthItem;
 
                 break;
             case itemShop.bigBatteryHealth:
                 pricesBigHealthItemText.text = pricesBigHealthItem.ToString() + " $";
-                PlayerStats.Instance.health += takersBigBaterryHealth;
+                PlayerStats.Instance.currentHealth += takersBigBaterryHealth;
                 MoneyController.Instance.addMoney -= pricesBigHealthItem;
                 break;
         }

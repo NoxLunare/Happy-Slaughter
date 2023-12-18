@@ -32,7 +32,11 @@ public class AIStatistics : MonoBehaviour
 
         if (health <= 0)
         {
-            DropMoney();    
+            DropMoney();
+            PlayerStats.Instance.GetExp(2);
+            PlayerStats.Instance.UpdateExpUI();
+            PlayerStats.Instance.GetScrap(5);
+            PlayerStats.Instance.UpdateScrapUI();
             health = 0;
             Destroy(gameObject);    
         }

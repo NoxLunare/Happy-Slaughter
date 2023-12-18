@@ -8,7 +8,7 @@ public class TriggerDamage : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerStats.health--;
+            playerStats.currentHealth--;
         }
     }
 

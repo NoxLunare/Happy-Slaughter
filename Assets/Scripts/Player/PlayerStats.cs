@@ -1,15 +1,23 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats Instance;
-    public Slider healthSlider;
 
-    public float health;
+    public Slider healthSlider;
+    public Slider expSlider;
+
+    public Text levelPlayerText;
+    public Text scrapText;
+
+    public float currentHealth;
     public float maxHealth = 100f;
 
+    public int currentExp;
+    public int maxExp;
+    public int scrap;
+    public float levelPlayer;
     private void Awake()
     {
         if (Instance == null)
@@ -24,35 +32,62 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-   
-        health = maxHealth;
-      
+        currentHealth = maxHealth;
     }
 
   
     void Update()
     {
         HealthController();
+        ExpController();
     }
 
     public void HealthController()
     {
-        healthSlider.value = health;
+        healthSlider.value = currentHealth;
 
-        if (health > maxHealth)
+        if (currentHealth > maxHealth)
         {
-            health = maxHealth;
+            currentHealth = maxHealth;
         }
 
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
-            health = 0;
+            currentHealth = 0;
 
             Die();
         }
     }
-
-
+    public void ExpController()
+    {
+        if (currentExp >= maxExp)
+        {
+            levelPlayer++;
+            maxExp += 2;           
+          
+            currentExp = 0;
+        }
+    }
+    public int GetExp(int exp)
+    {
+        currentExp += exp;
+        return exp;
+    }
+    public int GetScrap(int scrap)
+    {
+        this.scrap += scrap;
+        return scrap;
+    }
+    public void UpdateScrapUI()
+    {
+        scrapText.text = scrap.ToString();
+    }
+    public void UpdateExpUI()
+    {
+        expSlider.value = currentExp;
+        expSlider.maxValue = maxExp;
+        levelPlayerText.text = levelPlayer.ToString();
+    }
     public void Die()
     {
         Destroy(gameObject,2);
