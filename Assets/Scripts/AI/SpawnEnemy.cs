@@ -1,32 +1,48 @@
 using System.Collections.Generic;
-using System.Drawing;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
     public List<GameObject> enemyList;
 
+    public Transform postionPlayer;
+    public Transform teleportPlayer;
+
     public bool isTrigger = false;
+    public bool canSpawnEnemy = false;
+    public int clickSpawnEnemy = 0;
+
     private void FixedUpdate()
     {
         SpawnEnemyTrigger();
+
+        
+       
     }
     public void SpawnEnemyTrigger()
     {
         if (isTrigger && Input.GetKeyDown(KeyCode.E))
         {
             SpawnEnemyController();
+            TeleportArena();
         }
     }
     public void SpawnEnemyController()
     {
-        for (int i = 0; i < Random.Range(4,10); i++)
+        for (int i = 0; i < Random.Range(4, 10); i++)
         {
             GameObject enemy = enemyList[Random.Range(0, enemyList.Count)];
             Vector3 spawnPoint = new Vector3(Random.Range(1, 17), 1, Random.Range(4, 23));
             Instantiate(enemy, spawnPoint, Quaternion.identity);
+
         }
+
+    }
+
+    public void TeleportArena()
+    {
+        postionPlayer.position = teleportPlayer.position;
+        postionPlayer.rotation = teleportPlayer.rotation;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,4 +70,5 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
+    
 }
