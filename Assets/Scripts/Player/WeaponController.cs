@@ -60,5 +60,9 @@ public class WeaponController : MonoBehaviour
         {
             ammo = maxAmmo;
         }
+        if (ammo < 1)
+        {
+            ammo = maxAmmo;
+        }
     }
 }

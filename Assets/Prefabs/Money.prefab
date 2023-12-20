@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 4877132445325463441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.306, z: 0}
-  m_LocalScale: {x: 0.94406253, y: 0.010328983, z: 0.5927}
+  m_LocalPosition: {x: -0, y: 0.311, z: 0}
+  m_LocalScale: {x: 0.5650309, y: 0.010328983, z: 0.740875}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyController: {fileID: 0}
   speed: 100
-  audioSource: {fileID: 0}
 --- !u!54 &-3382683458848233929
 Rigidbody:
   m_ObjectHideFlags: 0

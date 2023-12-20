@@ -18,7 +18,12 @@ public class Enemy_Movement : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(player);
+        //transform.LookAt(player);
+
+        Vector3 directionToPlayer = player.position - transform.position;
+        directionToPlayer.y = 0;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
         if (Vector3.Distance(transform.position, player.position) >= MinDist)
         {
