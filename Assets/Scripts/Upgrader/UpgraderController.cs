@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UpgraderController : MonoBehaviour
 {
+    public static UpgraderController Instance;
     public enum UpgradePlayer
     {
         damage
@@ -16,9 +17,19 @@ public class UpgraderController : MonoBehaviour
     public Text upgradeDamagePlayerText;
 
     public int priceDamageScrap = 20;
-    public int upgradeDamagePlayer;
+    public int currentUpgradeUI;
+    public int upgradeDamagePlayer = 5;
 
     public bool canUpgrade = false;
+
+    private void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+       
+    }
     public void UpgradeDamage()
     {
         if (PlayerStats.Instance.scrap >= priceDamageScrap)
@@ -26,10 +37,10 @@ public class UpgraderController : MonoBehaviour
             CurrentUpgradePlayer(UpgradePlayer.damage);
             canUpgrade = true;
 
-            if (upgradeDamagePlayer >= 10)
+            if (currentUpgradeUI > 9)
             {
                 canUpgrade = false;
-                upgradeDamagePlayer = 10;
+                currentUpgradeUI = 10;
             }
         }
     }
@@ -46,10 +57,10 @@ public class UpgraderController : MonoBehaviour
         {   
             case UpgradePlayer.damage:
                 PlayerStats.Instance.scrap -= priceDamageScrap;
-                BulletController.Instance.damage += 5;
-                upgradeDamagePlayer++;
+                BulletController.Instance.damage += upgradeDamagePlayer;
+                currentUpgradeUI++;
                 scrapText.text = PlayerStats.Instance.scrap.ToString();
-                upgradeDamagePlayerText.text = upgradeDamagePlayer.ToString();  
+                upgradeDamagePlayerText.text = currentUpgradeUI.ToString();  
                 break;
            
         }

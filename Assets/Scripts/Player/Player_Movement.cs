@@ -42,6 +42,5 @@ public class Player_Movement : MonoBehaviour
         Vector3 move = new Vector3(horizontal, 0, vertical);
         move = transform.rotation * move;
         characterController.SimpleMove(move);
-
     }
 }
