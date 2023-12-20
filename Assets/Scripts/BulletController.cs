@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
@@ -5,7 +7,7 @@ public class BulletController : MonoBehaviour
     public static BulletController Instance;
     [SerializeField] float velocity;
     [SerializeField] new Rigidbody rigidbody;
-    public int damage;
+    public int damage = 25;
 
     private void Awake()
     {
@@ -13,12 +15,12 @@ public class BulletController : MonoBehaviour
         {
             Instance = this;
         }
-       
-
         rigidbody.velocity=transform.forward*velocity;
         Destroy(gameObject, 5f);
+
     }
 
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag =="Enemy")
