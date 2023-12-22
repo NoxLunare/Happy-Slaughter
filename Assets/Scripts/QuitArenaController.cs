@@ -8,7 +8,7 @@ public class QuitArenaController : MonoBehaviour
     [SerializeField] private Transform quitArena;
 
     private bool isTrigger = false;
-
+   
     private void FixedUpdate()
     {
         if (isTrigger)
@@ -16,11 +16,12 @@ public class QuitArenaController : MonoBehaviour
             playerPostion.transform.position = quitArena.transform.position;
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            isTrigger = true;        
+            isTrigger = true;      
         }
     }
 

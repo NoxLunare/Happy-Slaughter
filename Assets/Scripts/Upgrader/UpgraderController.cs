@@ -60,7 +60,8 @@ public class UpgraderController : MonoBehaviour
                 BulletController.Instance.damage += upgradeDamagePlayer;
                 currentUpgradeUI++;
                 scrapText.text = PlayerStats.Instance.scrap.ToString();
-                upgradeDamagePlayerText.text = currentUpgradeUI.ToString();  
+                upgradeDamagePlayerText.text = currentUpgradeUI.ToString();
+                SaveManager.Instance.Save();
                 break;
            
         }

@@ -37,8 +37,10 @@ public class AIStatistics : MonoBehaviour
             PlayerStats.Instance.UpdateExpUI();
             PlayerStats.Instance.GetScrap(5);
             PlayerStats.Instance.UpdateScrapUI();
+            SaveManager.Instance.Save();
             health = 0;
-            Destroy(gameObject);    
+            Destroy(gameObject);
+          
         }
     }
 

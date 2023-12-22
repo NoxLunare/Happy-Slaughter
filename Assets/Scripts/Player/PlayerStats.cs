@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
     public int currentExp;
     public int maxExp;
     public int scrap;
-    public float levelPlayer;
+    public int levelPlayer;
     private void Awake()
     {
         if (Instance == null)
@@ -33,6 +33,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        
     }
 
   
@@ -40,6 +41,7 @@ public class PlayerStats : MonoBehaviour
     {
         HealthController();
         ExpController();
+      
     }
 
     public void HealthController()
@@ -64,8 +66,8 @@ public class PlayerStats : MonoBehaviour
         {
             levelPlayer++;
             maxExp += 2;           
-          
             currentExp = 0;
+            SaveManager.Instance.Save();
         }
     }
     public int GetExp(int exp)

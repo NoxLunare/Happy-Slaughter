@@ -10,7 +10,6 @@ public class SpawnEnemy : MonoBehaviour
 
     public bool isTrigger = false;
     public bool canSpawnEnemy = false;
-    public int clickSpawnEnemy = 0;
 
     private void FixedUpdate()
     {

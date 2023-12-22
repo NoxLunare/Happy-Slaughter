@@ -22,6 +22,7 @@ public class TakeMoney : MonoBehaviour
         if (other.tag =="Player")
         {
             moneyController.addMoney++;
+            SaveManager.Instance.Save();
             Destroy(gameObject);
         }
     }
