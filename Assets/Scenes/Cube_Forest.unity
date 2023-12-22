@@ -4980,6 +4980,7 @@ MonoBehaviour:
   buttonUpgrader: {fileID: 683390394}
   upgraderText: {fileID: 490102248}
   closeUpgrader: {fileID: 1350613455}
+  buyUpgrader: 0
   canUpgrader: 0
 --- !u!1 &683390394
 GameObject:
@@ -5894,7 +5895,7 @@ MonoBehaviour:
   scrapText: {fileID: 1838310658}
   upgradeDamagePlayerText: {fileID: 1715595077}
   priceDamageScrap: 20
-  currentUpgradeUI: 0
+  currentUpgradeDamageUI: 0
   upgradeDamagePlayer: 0
   canUpgrade: 0
 --- !u!1 &764294170

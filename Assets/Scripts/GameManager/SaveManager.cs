@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class SaveManager : MonoBehaviour
     {
         Load();
     }
+
+    
     public void Load()
     {
         MoneyController.Instance.addMoney = PlayerPrefs.GetInt("saveMoney",MoneyController.Instance.addMoney);
@@ -27,6 +30,18 @@ public class SaveManager : MonoBehaviour
         PlayerStats.Instance.currentExp = PlayerPrefs.GetInt("saveExp", PlayerStats.Instance.currentExp);
         PlayerStats.Instance.maxExp = PlayerPrefs.GetInt("saveMaxExp", PlayerStats.Instance.maxExp);
         PlayerStats.Instance.levelPlayer = PlayerPrefs.GetInt("saveLevel", PlayerStats.Instance.levelPlayer);
+
+        BuyUpgraderPlace.Instance.buyUpgrader = PlayerPrefs.GetInt("saveBuyUpgrader",BuyUpgraderPlace.Instance.buyUpgrader);
+
+        if (BuyUpgraderPlace.Instance.buyUpgrader == 1)
+        {
+            BuyUpgraderPlace.Instance.placeUpgrader.SetActive(true);
+            BuyUpgraderPlace.Instance.closeUpgrader.SetActive(false);
+        }
+
+        PlayerStats.Instance.currentHealth = PlayerPrefs.GetFloat("saveHealth",PlayerStats.Instance.currentHealth);
+
+      
     }
     public void Save()
     {
@@ -35,6 +50,10 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetInt("saveExp", PlayerStats.Instance.currentExp);
         PlayerPrefs.SetInt("saveMaxExp", PlayerStats.Instance.maxExp);
         PlayerPrefs.SetInt("saveLevel", PlayerStats.Instance.levelPlayer);
+        PlayerPrefs.SetInt("saveBuyUpgrader", BuyUpgraderPlace.Instance.buyUpgrader);
+       
+        PlayerPrefs.SetFloat("saveHealth", PlayerStats.Instance.currentHealth);
+
         PlayerPrefs.Save();
     }
 }

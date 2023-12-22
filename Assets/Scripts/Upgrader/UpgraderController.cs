@@ -17,7 +17,7 @@ public class UpgraderController : MonoBehaviour
     public Text upgradeDamagePlayerText;
 
     public int priceDamageScrap = 20;
-    public int currentUpgradeUI;
+    public int currentUpgradeDamageUI;
     public int upgradeDamagePlayer = 5;
 
     public bool canUpgrade = false;
@@ -37,10 +37,10 @@ public class UpgraderController : MonoBehaviour
             CurrentUpgradePlayer(UpgradePlayer.damage);
             canUpgrade = true;
 
-            if (currentUpgradeUI > 9)
+            if (currentUpgradeDamageUI > 9)
             {
                 canUpgrade = false;
-                currentUpgradeUI = 10;
+                currentUpgradeDamageUI = 10;
             }
         }
     }
@@ -58,9 +58,9 @@ public class UpgraderController : MonoBehaviour
             case UpgradePlayer.damage:
                 PlayerStats.Instance.scrap -= priceDamageScrap;
                 BulletController.Instance.damage += upgradeDamagePlayer;
-                currentUpgradeUI++;
+                currentUpgradeDamageUI++;
                 scrapText.text = PlayerStats.Instance.scrap.ToString();
-                upgradeDamagePlayerText.text = currentUpgradeUI.ToString();
+                upgradeDamagePlayerText.text = currentUpgradeDamageUI.ToString();
                 SaveManager.Instance.Save();
                 break;
            
