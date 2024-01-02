@@ -7,7 +7,7 @@ public class BulletController : MonoBehaviour
     public static BulletController Instance;
     [SerializeField] float velocity;
     [SerializeField] new Rigidbody rigidbody;
-    public int damage = 25;
+    public int damage = 20;
 
     private void Awake()
     {
@@ -20,7 +20,20 @@ public class BulletController : MonoBehaviour
 
     }
 
-   
+    private void Start()
+    {
+        try
+        {
+            int loadDamage = PlayerPrefs.GetInt("saveUpgradeDamagePlayer", UpgraderController.Instance.upgradeDamagePlayer);
+            damage += loadDamage;
+        }
+        catch (NullReferenceException)
+        {
+
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag =="Enemy")

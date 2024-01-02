@@ -50,7 +50,7 @@ public class BuyUpgraderPlace : MonoBehaviour
             upgraderText.SetActive(true);
             closeUpgrader.SetActive(false);
             buyUpgrader = 1;
-            SaveManager.Instance.Save();
+            SaveManager.Instance.SavePlayerStats();
         }
 
         if (buyUpgrader == 1)

@@ -51,7 +51,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
-            SaveManager.Instance.Save();
+     
         }
 
         if (currentHealth <= 0)
@@ -59,6 +59,11 @@ public class PlayerStats : MonoBehaviour
             currentHealth = 0;
 
             Die();
+        }
+
+        if (currentHealth < maxHealth)
+        {
+            SaveManager.Instance.SavePlayerStats();
         }
     }
     public void ExpController()
@@ -68,19 +73,19 @@ public class PlayerStats : MonoBehaviour
             levelPlayer++;
             maxExp += 2;           
             currentExp = 0;
-            SaveManager.Instance.Save();
+            SaveManager.Instance.SavePlayerStats();
         }
     }
     public int GetExp(int exp)
     {
         currentExp += exp;
-        SaveManager.Instance.Save();
+        SaveManager.Instance.SavePlayerStats();
         return exp;
     }
     public int GetScrap(int scrap)
     {
         this.scrap += scrap;
-        SaveManager.Instance.Save();
+        SaveManager.Instance.SavePlayerStats();
         return scrap;
     }
     public void UpdateScrapUI()

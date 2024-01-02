@@ -28,6 +28,7 @@ public class UpgraderController : MonoBehaviour
         {
             Instance = this;
         }
+
        
     }
     public void UpgradeDamage()
@@ -57,13 +58,15 @@ public class UpgraderController : MonoBehaviour
         {   
             case UpgradePlayer.damage:
                 PlayerStats.Instance.scrap -= priceDamageScrap;
-                BulletController.Instance.damage += upgradeDamagePlayer;
+                upgradeDamagePlayer += BulletController.Instance.damage;
                 currentUpgradeDamageUI++;
                 scrapText.text = PlayerStats.Instance.scrap.ToString();
                 upgradeDamagePlayerText.text = currentUpgradeDamageUI.ToString();
-                SaveManager.Instance.Save();
+                SaveManager.Instance.SavePlayerUpgrade();
                 break;
            
         }
     }
+
+   
 }

@@ -57,13 +57,13 @@ public class ShopItems : MonoBehaviour
                 priceSmallHealthItemText.text = priceSmallHealthItem.ToString() + " $";
                 PlayerStats.Instance.currentHealth += takeSmallBaterryHealth;
                 MoneyController.Instance.addMoney -= priceSmallHealthItem;
-                SaveManager.Instance.Save();
+                SaveManager.Instance.SavePlayerStats();
                 break;
             case itemShop.bigBatteryHealth:
                 pricesBigHealthItemText.text = pricesBigHealthItem.ToString() + " $";
                 PlayerStats.Instance.currentHealth += takersBigBaterryHealth;
                 MoneyController.Instance.addMoney -= pricesBigHealthItem;
-                SaveManager.Instance.Save();
+                SaveManager.Instance.SavePlayerStats();
                 break;
         }
     }
