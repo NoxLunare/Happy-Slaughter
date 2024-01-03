@@ -18,18 +18,12 @@ public class AIStatistics : MonoBehaviour
 
     private void Update()
     {
-        HealthController();
+        TryKillIfZeroHealth();
         sliderHp.value = health;
     }
 
-    public void HealthController()
+    public void TryKillIfZeroHealth()
     {
-
-        if (health > 0)
-        {
-            sliderHp.value = maxHealth;
-        }
-
         if (health <= 0)
         {
             DropMoney();
@@ -38,6 +32,8 @@ public class AIStatistics : MonoBehaviour
             PlayerStats.Instance.GetScrap(5);
             PlayerStats.Instance.UpdateScrapUI();
             health = 0;
+            SpawnEnemy.Instance.countEnemy--;
+            Debug.Log(SpawnEnemy.Instance.countEnemy);
             Destroy(gameObject);
           
         }

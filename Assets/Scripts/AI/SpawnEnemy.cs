@@ -3,20 +3,32 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
+    public static SpawnEnemy Instance;
     public List<GameObject> enemyList;
 
     public Transform postionPlayer;
     public Transform teleportPlayer;
+    public Transform teleportPlayerOut;
 
     public bool isTrigger = false;
     public bool canSpawnEnemy = false;
 
+    public int countEnemy;
+
+   public void  awake()
+    {
+       
+    }
     private void FixedUpdate()
     {
         SpawnEnemyTrigger();
 
-        
-       
+        /*if (countEnemy == 0)
+        {
+            TeleportArenaOut();
+        }
+        Debug.Log(countEnemy);
+       */ 
     }
     public void SpawnEnemyTrigger()
     {
@@ -33,15 +45,30 @@ public class SpawnEnemy : MonoBehaviour
             GameObject enemy = enemyList[Random.Range(0, enemyList.Count)];
             Vector3 spawnPoint = new Vector3(Random.Range(1, 17), 1, Random.Range(4, 23));
             Instantiate(enemy, spawnPoint, Quaternion.identity);
+            countEnemy++;
 
+            if (Instance == null)
+            {
+                Instance = this;
+            }
         }
 
+
+
+       
     }
+
 
     public void TeleportArena()
     {
         postionPlayer.position = teleportPlayer.position;
         postionPlayer.rotation = teleportPlayer.rotation;
+    }
+
+    public void TeleportArenaOut()
+    {
+        postionPlayer.position = teleportPlayerOut.position;
+        postionPlayer.rotation = teleportPlayerOut.rotation;
     }
 
     private void OnTriggerEnter(Collider other)
