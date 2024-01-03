@@ -28,10 +28,10 @@ public class WeaponController : MonoBehaviour
 
     public void ShootController()
     {
-       
+
         if (Input.GetMouseButtonDown(0))
         {
-            isLight =! isLight;
+            isLight = !isLight;
             light.SetActive(isLight);
             AmmoController();
         }
@@ -48,7 +48,7 @@ public class WeaponController : MonoBehaviour
             Instantiate(bulletPrefab, bulletSpawnerTransform.position, bulletSpawnerTransform.rotation);
             ammo--;
         }
-        
+
         if (ammo >= maxAmmo)
         {
             ammo = maxAmmo;
@@ -65,4 +65,5 @@ public class WeaponController : MonoBehaviour
             ammo = maxAmmo;
         }
     }
+
 }
