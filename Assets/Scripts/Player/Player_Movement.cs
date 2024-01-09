@@ -1,14 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 6f;
+   public enum AnimPlayerState
+    {
+        idle,
+        walking,
+        running
+    }
+
+    public AnimPlayerState currentPlayer;
+
+    [SerializeField] private float movementSpeed = 3f;
+    [SerializeField] private float runningSpeed = 6f;
+    [SerializeField] private float currentSpeed;
 
     private float horizontal;
     private float vertical;
-
+  
     public CharacterController characterController;
     public Animator animator;
     
@@ -17,7 +26,7 @@ public class Player_Movement : MonoBehaviour
         Cursor.visible = false;
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-       
+        currentSpeed = movementSpeed;
     }
 
     void Update()
@@ -27,20 +36,49 @@ public class Player_Movement : MonoBehaviour
 
     public void Keyboard()
     {
-        animator.SetBool("isWalking", false);
-     
-        horizontal = Input.GetAxis("Horizontal") * movementSpeed;
-        vertical = Input.GetAxis("Vertical") * movementSpeed;
+        CurrentStateMachine(AnimPlayerState.idle);
+       
+        horizontal = Input.GetAxis("Horizontal") * currentSpeed;
+        vertical = Input.GetAxis("Vertical") * currentSpeed;
 
         if (horizontal != 0 || vertical != 0)
         {
-            animator.SetBool("isWalking",true);
-      
-            
+            CurrentStateMachine(AnimPlayerState.walking);
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            CurrentStateMachine(AnimPlayerState.running);
+        }
+       
 
         Vector3 move = new Vector3(horizontal, 0, vertical);
         move = transform.rotation * move;
         characterController.SimpleMove(move);
+    }
+
+    public void CurrentStateMachine(AnimPlayerState animPlayer)
+    {
+        currentPlayer = animPlayer;
+        PlayerStateController(animPlayer);
+    }
+    public void PlayerStateController(AnimPlayerState currentState)
+    {
+        switch (currentState)
+        {
+            case AnimPlayerState.idle:
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isRunning", false);
+                break;
+            case AnimPlayerState.walking:
+                animator.SetBool("isWalking", true);
+                currentSpeed = movementSpeed;
+                break;
+            case AnimPlayerState.running:
+                animator.SetBool("isRunning", true);
+                currentSpeed = runningSpeed;
+                break;
+
+        }
     }
 }

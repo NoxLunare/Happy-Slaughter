@@ -3157,7 +3157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c6c83713a4daa4d94cab4e756f174e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
+  currentPlayer: 0
+  movementSpeed: 3
+  runningSpeed: 6
+  currentSpeed: 0
   characterController: {fileID: 5357485736380666052}
   animator: {fileID: 1262548770933349409}
 --- !u!114 &3262035890387850759

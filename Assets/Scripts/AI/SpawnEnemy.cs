@@ -46,16 +46,12 @@ public class SpawnEnemy : MonoBehaviour
             Vector3 spawnPoint = new Vector3(Random.Range(1, 17), 1, Random.Range(4, 23));
             Instantiate(enemy, spawnPoint, Quaternion.identity);
             countEnemy++;
-
+            QuitArenaController.Instance.isClose = true;
             if (Instance == null)
             {
                 Instance = this;
             }
         }
-
-
-
-       
     }
 
 
@@ -71,6 +67,7 @@ public class SpawnEnemy : MonoBehaviour
         postionPlayer.rotation = teleportPlayerOut.rotation;
     }
 
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag =="Player")

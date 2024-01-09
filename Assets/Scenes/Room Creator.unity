@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   templates: {fileID: 342067273}
-  spawnRoom: {x: -5, y: 0, z: 0}
+  spawnRoom: {fileID: 542450726}
 --- !u!1 &741846030
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   templates: {fileID: 342067273}
-  spawnRoom: {x: 5, y: 0, z: 0}
+  spawnRoom: {fileID: 741846031}
 --- !u!1 &900848142
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   templates: {fileID: 342067273}
-  spawnRoom: {x: 0, y: 0, z: -5}
+  spawnRoom: {fileID: 900848143}
 --- !u!1001 &1653332589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 4
   templates: {fileID: 342067273}
-  spawnRoom: {x: 0, y: 0, z: 5}
+  spawnRoom: {fileID: 1730813764}
 --- !u!1 &1887690583
 GameObject:
   m_ObjectHideFlags: 0
