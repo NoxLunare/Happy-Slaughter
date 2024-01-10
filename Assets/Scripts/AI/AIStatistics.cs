@@ -32,7 +32,7 @@ public class AIStatistics : MonoBehaviour
             PlayerStats.Instance.GetScrap(5);
             PlayerStats.Instance.UpdateScrapUI();
             health = 0;
-            SpawnEnemy.Instance.countEnemy--;
+            SpawnEnemy.Instance.countEnemy--; 
             Debug.Log(SpawnEnemy.Instance.countEnemy);
             Destroy(gameObject);
           

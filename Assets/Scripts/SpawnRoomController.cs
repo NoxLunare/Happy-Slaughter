@@ -5,18 +5,20 @@ using UnityEngine;
 public class SpawnRoomController : MonoBehaviour
 {
     public int openingDirection;
+
     public RoomTemplates templates;
 
     public  Transform spawnRoom;
-  
+ 
     private void Start()
     {
-        SpawnRoom();
+        templates = GameObject.Find("Game Manager").GetComponent<RoomTemplates>();
+        Invoke("SpawnRoom",0.1f);
     }
 
    public void SpawnRoom()
     {
-      
+
         if (openingDirection == 1)
         {
             int random = Random.Range(0, templates.bottomRoomsList.Count);

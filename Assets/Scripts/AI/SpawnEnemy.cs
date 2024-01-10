@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnEnemy : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class SpawnEnemy : MonoBehaviour
     public Transform postionPlayer;
     public Transform teleportPlayer;
     public Transform teleportPlayerOut;
+
+    [SerializeField] private Text countEnemyText;
 
     public bool isTrigger = false;
     public bool canSpawnEnemy = false;
@@ -22,7 +25,7 @@ public class SpawnEnemy : MonoBehaviour
     private void FixedUpdate()
     {
         SpawnEnemyTrigger();
-
+        UpdateCounterEnemy();
         /*if (countEnemy == 0)
         {
             TeleportArenaOut();
@@ -46,6 +49,7 @@ public class SpawnEnemy : MonoBehaviour
             Vector3 spawnPoint = new Vector3(Random.Range(1, 17), 1, Random.Range(4, 23));
             Instantiate(enemy, spawnPoint, Quaternion.identity);
             countEnemy++;
+         
             QuitArenaController.Instance.isClose = true;
             if (Instance == null)
             {
@@ -54,7 +58,10 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
-
+    public void UpdateCounterEnemy()
+    {
+        countEnemyText.text = countEnemy.ToString();
+    }
     public void TeleportArena()
     {
         postionPlayer.position = teleportPlayer.position;
