@@ -30,6 +30,7 @@ public class SaveManager : MonoBehaviour
         PlayerStats.Instance.currentExp = PlayerPrefs.GetInt("saveExp", PlayerStats.Instance.currentExp);
         PlayerStats.Instance.maxExp = PlayerPrefs.GetInt("saveMaxExp", PlayerStats.Instance.maxExp);
         PlayerStats.Instance.levelPlayer = PlayerPrefs.GetInt("saveLevel", PlayerStats.Instance.levelPlayer);
+   
         BuyUpgraderPlace.Instance.buyUpgrader = PlayerPrefs.GetInt("saveBuyUpgrader", BuyUpgraderPlace.Instance.buyUpgrader);
 
         if (BuyUpgraderPlace.Instance.buyUpgrader == 1)
@@ -39,8 +40,8 @@ public class SaveManager : MonoBehaviour
         }
 
         PlayerStats.Instance.currentHealth = PlayerPrefs.GetFloat("saveHealth", PlayerStats.Instance.currentHealth);
+        PlayerStats.Instance.overheating = PlayerPrefs.GetFloat("saveOverheating", PlayerStats.Instance.overheating);
 
-       
 
     }
     public void SavePlayerStats()
@@ -50,10 +51,12 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetInt("saveExp", PlayerStats.Instance.currentExp);
         PlayerPrefs.SetInt("saveMaxExp", PlayerStats.Instance.maxExp);
         PlayerPrefs.SetInt("saveLevel", PlayerStats.Instance.levelPlayer);
+     
         PlayerPrefs.SetInt("saveBuyUpgrader", BuyUpgraderPlace.Instance.buyUpgrader);
-
+  
 
         PlayerPrefs.SetFloat("saveHealth", PlayerStats.Instance.currentHealth);
+        PlayerPrefs.SetFloat("saveOverheating", PlayerStats.Instance.overheating);
         PlayerPrefs.Save();
     }
     public void SavePlayerUpgrade()

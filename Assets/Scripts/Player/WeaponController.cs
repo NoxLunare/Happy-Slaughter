@@ -33,6 +33,7 @@ public class WeaponController : MonoBehaviour
         {
             isLight = !isLight;
             light.SetActive(isLight);
+            PlayerStats.Instance.GetOverheating(5);
             AmmoController();
         }
     }
