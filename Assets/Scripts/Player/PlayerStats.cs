@@ -22,7 +22,10 @@ public class PlayerStats : MonoBehaviour
     public int maxExp;
     public int scrap;
     public int levelPlayer;
-    
+
+    private bool isBurning = false;
+    private bool isBurningSoundPlayer = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -91,26 +94,42 @@ public class PlayerStats : MonoBehaviour
             overheating = 0;
         }
 
-        if( overheating >= 100)
+        if (overheating >= 100)
         {
             overheating = 100;
-          
+
         }
 
         if (overheating >= 80)
         {
-            currentHealth -= 0.0002f;
+            currentHealth -= 0.003f;
+            isBurning = true;
             fire.SetActive(true);
+
+            if (!isBurningSoundPlayer)
+            {
+                AudioManager.Instance.StartBurningPlayerSound();
+                isBurningSoundPlayer = true;
+            }
         }
 
         if (overheating < 80)
         {
             fire.SetActive(false);
+            isBurning = false;
+
+            if (isBurningSoundPlayer)
+            {
+                AudioManager.Instance.StopBurningPlayerSound();
+                isBurningSoundPlayer = false;
+            }
         }
-        if (overheating <= 100 )
+
+        if (overheating <= 100)
         {
             overheating -= 0.006f;
         }
+
        
     }
     public int GetExp(int exp)

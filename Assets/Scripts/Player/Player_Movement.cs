@@ -17,7 +17,7 @@ public class Player_Movement : MonoBehaviour
 
     private float horizontal;
     private float vertical;
-  
+     
     public CharacterController characterController;
     public Animator animator;
     
@@ -37,13 +37,14 @@ public class Player_Movement : MonoBehaviour
     public void Keyboard()
     {
         CurrentStateMachine(AnimPlayerState.idle);
-       
+   
         horizontal = Input.GetAxis("Horizontal") * currentSpeed;
         vertical = Input.GetAxis("Vertical") * currentSpeed;
 
         if (horizontal != 0 || vertical != 0)
         {
             CurrentStateMachine(AnimPlayerState.walking);
+        
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -69,10 +70,12 @@ public class Player_Movement : MonoBehaviour
             case AnimPlayerState.idle:
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isRunning", false);
+               
                 break;
             case AnimPlayerState.walking:
                 animator.SetBool("isWalking", true);
                 currentSpeed = movementSpeed;
+                
                 break;
             case AnimPlayerState.running:
                 animator.SetBool("isRunning", true);
