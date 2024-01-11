@@ -23,7 +23,7 @@ public class PlayerStats : MonoBehaviour
     public int scrap;
     public int levelPlayer;
 
-    private bool isBurning = false;
+  
     private bool isBurningSoundPlayer = false;
 
     private void Awake()
@@ -103,7 +103,7 @@ public class PlayerStats : MonoBehaviour
         if (overheating >= 80)
         {
             currentHealth -= 0.003f;
-            isBurning = true;
+           
             fire.SetActive(true);
 
             if (!isBurningSoundPlayer)
@@ -116,7 +116,7 @@ public class PlayerStats : MonoBehaviour
         if (overheating < 80)
         {
             fire.SetActive(false);
-            isBurning = false;
+         
 
             if (isBurningSoundPlayer)
             {

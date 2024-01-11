@@ -5,10 +5,14 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;    
-    public AudioSource audioSource;
+
+    public AudioSource audioFireSource;
+    public AudioSource audioWalkingSource;
+    public AudioSource audioShootSource;
 
     public AudioClip audioClipFire;
     public AudioClip audioClipWalking;
+    public AudioClip audioClipShoot;
 
     private void Awake()
     {
@@ -20,35 +24,46 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioFireSource = GetComponent<AudioSource>();
+        audioWalkingSource = GetComponent<AudioSource>();
     }
 
   
     public void StartBurningPlayerSound()
     {
-        audioSource.clip = audioClipFire;   
-        audioSource.Play();
+        audioFireSource.clip = audioClipFire;   
+        audioFireSource.Play();
     }
-
     public void StopBurningPlayerSound()
     {
-        if (audioSource.isPlaying)
+        if (audioFireSource.isPlaying)
         {
-            audioSource.Stop();
+            audioFireSource.Stop();
         }
     }
-
     public void StartWalkingPlayerSound()
     {
-        audioSource.clip = audioClipWalking;
-        audioSource.Play();
+        audioWalkingSource.clip = audioClipWalking;
+        audioWalkingSource.Play();
     }
-
     public void StopWalkingPlayerSound()
     {
-        if (!audioSource.isPlaying)
+        if (audioWalkingSource.isPlaying)
         {
-            audioSource.Stop();
+            audioWalkingSource.Stop();
         }
     }
+    public void StartShootPlayerSound()
+    {
+        audioShootSource.clip = audioClipShoot;
+        audioShootSource.Play();
+    }
+    public void StopShootPlayerSound()
+    {
+        if (audioShootSource.isPlaying)
+        {
+            audioShootSource.Stop();
+        }
+    }
+
 }
