@@ -5,10 +5,19 @@ using UnityEngine;
 
 public class PlayerLookArround : MonoBehaviour
 {
+    public static PlayerLookArround Instance;   
     private float mouseHorizontal;
     private float mouseVertical;
     private float verticalRange = 90f;
-    private float sensivity = 2f;
+    public float sensivity = 2f;
+
+    private void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Update()
     {
         mouseHorizontal = Input.GetAxis("Mouse X") * sensivity;
