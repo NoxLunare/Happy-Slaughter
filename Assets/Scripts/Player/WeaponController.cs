@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class WeaponController : MonoBehaviour
 {
-  
     [SerializeField] Transform bulletPrefab;
     [SerializeField] Transform bulletSpawnerTransform;
 
@@ -15,8 +14,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private int maxAmmo = 60;
 
     private bool canShoot = false;
-    private bool isSoundShoot = false;  
+    private bool isSoundShoot = false;
 
+   
     private void Start()
     {
         ammo = maxAmmo;
@@ -35,7 +35,7 @@ public class WeaponController : MonoBehaviour
             PlayerStats.Instance.GetOverheating(5);
             AmmoController();
 
-            if (!isSoundShoot)
+            if (!isSoundShoot && !PauseGame.Instance.isActiveMenuUI)
             {
                 AudioManager.Instance.StartShootPlayerSound();
                 isSoundShoot = true;
@@ -53,7 +53,7 @@ public class WeaponController : MonoBehaviour
         canShoot = false;
         ammoText.text = ammo + "/" + maxAmmo;
 
-        if (ammo > 0)
+        if (ammo > 0 && !PauseGame.Instance.isActiveMenuUI)
         {
             canShoot = true;
             Instantiate(bulletPrefab, bulletSpawnerTransform.position, bulletSpawnerTransform.rotation);

@@ -8992,7 +8992,7 @@ MonoBehaviour:
   playerLookArround: {fileID: 4171057248070715459}
   scenePauseGame: {fileID: 2449734109928349966}
   playerUI: {fileID: 4049659297618655498}
-  isActive: 0
+  isActiveMenuUI: 0
 --- !u!114 &1110129781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9012,6 +9012,7 @@ MonoBehaviour:
   sfxCVolumeSlider: {fileID: 1528665500}
   musicAudioSource: {fileID: 1110129783}
   sfxAudioSource: {fileID: 1110129783}
+  audioMixer: {fileID: 24100000, guid: 3c804c70795895046829667d41e8e842, type: 2}
 --- !u!114 &1110129782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9033,7 +9034,7 @@ AudioSource:
   m_GameObject: {fileID: 1110129776}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -925663207298912935, guid: 3c804c70795895046829667d41e8e842, type: 2}
+  OutputAudioMixerGroup: {fileID: -3728772903771964078, guid: 3c804c70795895046829667d41e8e842, type: 2}
   m_audioClip: {fileID: 8300000, guid: 94bc8546fe222904c9fd6e0438c1b6fc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -9147,7 +9148,7 @@ AudioSource:
   m_GameObject: {fileID: 1110129776}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -925663207298912935, guid: 3c804c70795895046829667d41e8e842, type: 2}
+  OutputAudioMixerGroup: {fileID: -3728772903771964078, guid: 3c804c70795895046829667d41e8e842, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3289de52c30828c469a0bf6d8d30c67b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -9243,7 +9244,7 @@ AudioSource:
   m_GameObject: {fileID: 1110129776}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -925663207298912935, guid: 3c804c70795895046829667d41e8e842, type: 2}
+  OutputAudioMixerGroup: {fileID: -3728772903771964078, guid: 3c804c70795895046829667d41e8e842, type: 2}
   m_audioClip: {fileID: 8300000, guid: 475aa99d73ce2b94ea6d9901be39beef, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -9339,7 +9340,7 @@ AudioSource:
   m_GameObject: {fileID: 1110129776}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3222615141006956400, guid: 3c804c70795895046829667d41e8e842, type: 2}
+  OutputAudioMixerGroup: {fileID: -45548405860486630, guid: 3c804c70795895046829667d41e8e842, type: 2}
   m_audioClip: {fileID: 8300000, guid: cc6cab8c51deb8246b2d770a6c67a47d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
