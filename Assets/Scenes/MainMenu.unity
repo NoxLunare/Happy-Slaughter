@@ -340,6 +340,7 @@ MonoBehaviour:
   sfxCVolumeSlider: {fileID: 794079794}
   musicAudioSource: {fileID: 1074156192}
   sfxAudioSource: {fileID: 1074156192}
+  audioMixer: {fileID: 24100000, guid: 3c804c70795895046829667d41e8e842, type: 2}
 --- !u!114 &93886172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,7 +758,7 @@ AudioSource:
   m_GameObject: {fileID: 1074156191}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3222615141006956400, guid: 3c804c70795895046829667d41e8e842, type: 2}
+  OutputAudioMixerGroup: {fileID: -45548405860486630, guid: 3c804c70795895046829667d41e8e842, type: 2}
   m_audioClip: {fileID: 8300000, guid: 43ab7249803d9d34596d2fdc21258794, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -868,7 +869,7 @@ AudioSource:
   m_GameObject: {fileID: 1074156191}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -925663207298912935, guid: 3c804c70795895046829667d41e8e842, type: 2}
+  OutputAudioMixerGroup: {fileID: -3728772903771964078, guid: 3c804c70795895046829667d41e8e842, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3289de52c30828c469a0bf6d8d30c67b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -964,7 +965,7 @@ AudioSource:
   m_GameObject: {fileID: 1074156191}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -925663207298912935, guid: 3c804c70795895046829667d41e8e842, type: 2}
+  OutputAudioMixerGroup: {fileID: -3728772903771964078, guid: 3c804c70795895046829667d41e8e842, type: 2}
   m_audioClip: {fileID: 8300000, guid: 475aa99d73ce2b94ea6d9901be39beef, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1504,9 +1505,17 @@ PrefabInstance:
       value: 0.23076923
       objectReference: {fileID: 0}
     - target: {fileID: 5143728704951327923, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143728704951327923, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 93886171}
+    - target: {fileID: 5162686874088251218, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5162686874088251218, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

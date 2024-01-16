@@ -1,6 +1,8 @@
 using System;
 using TMPro;
+using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
@@ -17,16 +19,20 @@ public class MainMenu : MonoBehaviour
     public AudioSource musicAudioSource;
     public AudioSource sfxAudioSource;
 
+    public AudioMixer audioMixer;
+   
     private int screenWidth = Screen.width;
     private int screenHeight = Screen.height;
 
+    private const string mixerMusic = "Music";
+    private const string mixerSfx = "SFX";
     private void Start()
     {
         try
         {
             sensivitySlider.value = PlayerPrefs.GetFloat("MouseSensivity", PlayerLookArround.Instance.sensivity);
-            musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", musicAudioSource.volume);
-            sfxCVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", sfxAudioSource.volume);
+            musicVolumeSlider.value = PlayerPrefs.GetFloat(mixerMusic, musicAudioSource.volume);
+            sfxCVolumeSlider.value = PlayerPrefs.GetFloat(mixerSfx, sfxAudioSource.volume);
         }
         catch (NullReferenceException)
         {
@@ -72,20 +78,20 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void SetMusicVolume()
+    public void SetMusicVolume(float volume)
     {
-        float musicVolume = musicVolumeSlider.value;
-        musicAudioSource.volume = musicVolume;
-        PlayerPrefs.SetFloat("MusicVolume",musicVolume);
+        audioMixer.SetFloat(mixerMusic,volume);
+        PlayerPrefs.SetFloat(mixerMusic, musicVolumeSlider.value);
         PlayerPrefs.Save();
+
     }
 
-    public void SetSFXVolume()
+    public void SetSFXVolume(float volume)
     {
-        float sfxVolume = sfxCVolumeSlider.value;
-        sfxAudioSource.volume = sfxVolume;
-        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        audioMixer.SetFloat(mixerSfx,volume);
+        PlayerPrefs.SetFloat(mixerSfx, sfxCVolumeSlider.value);
         PlayerPrefs.Save();
+
     }
     public void ToogleFulscreen()
     {
