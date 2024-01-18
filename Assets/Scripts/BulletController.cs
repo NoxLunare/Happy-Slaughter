@@ -15,7 +15,7 @@ public class BulletController : MonoBehaviour
         {
             Instance = this;
         }
-        rigidbody.velocity=transform.forward*velocity;
+        rigidbody.velocity = transform.forward * velocity;
         Destroy(gameObject, 5f);
 
     }
@@ -36,10 +36,18 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag =="Enemy")
+        if (other.tag == "Enemy")
         {
-            AIStatistics  aIStatistics = other.GetComponent<AIStatistics>();
-            aIStatistics.health -=damage;
+            AIStatistics aIStatistics = other.GetComponent<AIStatistics>();
+            aIStatistics.health -= damage;
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Object"))
+        {
             Destroy(gameObject);
         }
     }

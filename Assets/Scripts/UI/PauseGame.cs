@@ -8,6 +8,7 @@ public class PauseGame : MonoBehaviour
 
     public GameObject scenePauseGame;
     public GameObject playerUI;
+    
 
     public bool isActiveMenuUI;
 
@@ -25,7 +26,7 @@ public class PauseGame : MonoBehaviour
     private void Update()
     {
         PauseGameController();
-      
+    
     }
     public void PauseGameController()
     {
@@ -49,6 +50,8 @@ public class PauseGame : MonoBehaviour
         playerLookArround.enabled = true;
         Time.timeScale = 1.0f;
     }
+
+ 
 
     public void BackMainMenu()
     {

@@ -9,6 +9,7 @@ TagManager:
   - RoomSpawner
   - SpawnPoint
   - Rooms
+  - Object
   layers:
   - Default
   - TransparentFX
