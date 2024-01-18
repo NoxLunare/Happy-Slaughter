@@ -6,7 +6,7 @@ public class ShopItems : MonoBehaviour
     
     [SerializeField] private int priceSmallHealthItem = 5;
     [SerializeField] private int pricesBigHealthItem = 25;
-    [SerializeField] private int pricesOverheatingItem = 35;
+    [SerializeField] private int pricesRepairOverheatingItem = 35;
 
     [SerializeField] private float takeSmallBaterryHealth = 30;
     [SerializeField] private float takersBigBaterryHealth = 80;
@@ -20,7 +20,7 @@ public class ShopItems : MonoBehaviour
     {
         smallBatteryHealth,
         bigBatteryHealth,
-        overheating
+        RepairOverheating
     }
 
     public itemShop currentItem;
@@ -35,7 +35,6 @@ public class ShopItems : MonoBehaviour
             }
         }
     }
-
     public void BigBatteryHealth()
     {
         if (MoneyController.Instance.addMoney >= pricesBigHealthItem)
@@ -46,13 +45,13 @@ public class ShopItems : MonoBehaviour
             }
         }
     }
-    public void Overheating()
+    public void RepairOverheating()
     {
-        if (MoneyController.Instance.addMoney >= pricesOverheatingItem)
+        if (MoneyController.Instance.addMoney >= pricesRepairOverheatingItem)
         {
             if (PlayerStats.Instance.overheating <= 100)
             {
-                CurrentItemShop(itemShop.overheating);
+                CurrentItemShop(itemShop.RepairOverheating);
             }
         }
     }
@@ -78,8 +77,8 @@ public class ShopItems : MonoBehaviour
                 MoneyController.Instance.addMoney -= pricesBigHealthItem;
                 SaveManager.Instance.SavePlayerStats();
                 break;
-            case itemShop.overheating:
-                pricesOverheatingText.text = pricesOverheatingItem.ToString() + " $";
+            case itemShop.RepairOverheating:
+                pricesOverheatingText.text = pricesRepairOverheatingItem.ToString() + " $";
                 PlayerStats.Instance.overheating -= takerOverheating; 
                 MoneyController.Instance.addMoney -= pricesBigHealthItem;
                 SaveManager.Instance.SavePlayerStats();

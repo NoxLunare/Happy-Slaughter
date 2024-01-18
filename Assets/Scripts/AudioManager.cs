@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -21,14 +19,12 @@ public class AudioManager : MonoBehaviour
             Instance = this;
         }
     }
-
     private void Start()
     {
         audioFireSource = GetComponent<AudioSource>();
         audioWalkingSource = GetComponent<AudioSource>();
     }
 
-  
     public void StartBurningPlayerSound()
     {
         audioFireSource.clip = audioClipFire;   
