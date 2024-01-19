@@ -82,7 +82,6 @@ public class MainMenu : MonoBehaviour
         audioMixer.SetFloat(mixerMusic,volume);
         PlayerPrefs.SetFloat(mixerMusic, musicVolumeSlider.value);
         PlayerPrefs.Save();
-
     }
 
     public void SetSFXVolume(float volume)
@@ -90,7 +89,6 @@ public class MainMenu : MonoBehaviour
         audioMixer.SetFloat(mixerSfx,volume);
         PlayerPrefs.SetFloat(mixerSfx, sfxCVolumeSlider.value);
         PlayerPrefs.Save();
-
     }
     public void ToogleFulscreen()
     {

@@ -13834,12 +13834,20 @@ PrefabInstance:
       value: 0.23076923
       objectReference: {fileID: 0}
     - target: {fileID: 5143728704951327923, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143728704951327923, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1110129781}
     - target: {fileID: 5143728704951327923, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162686874088251218, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5162686874088251218, guid: a1a181932006a9e40aeed17c6136fc31, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
