@@ -163,6 +163,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void Die()
     {
+        PlayerPrefs.DeleteAll();
         Destroy(gameObject,2);
         SceneManager.LoadScene("MainMenu");
     }

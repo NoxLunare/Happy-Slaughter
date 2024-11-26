@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -25,6 +26,15 @@ public class MainMenu : MonoBehaviour
 
     private const string mixerMusic = "Music";
     private const string mixerSfx = "SFX";
+
+    private readonly Vector2Int[] resolutions =
+   {
+     new Vector2Int(1280, 720),
+     new Vector2Int(1920, 1080),
+     new Vector2Int(2560, 1440),
+     new Vector2Int(3840, 2160)
+    };
+
     private void Start()
     {
         try
@@ -37,7 +47,19 @@ public class MainMenu : MonoBehaviour
         {
 
         }
-       
+
+        dropdownResolution.ClearOptions();
+        foreach (var res in resolutions)
+        {
+            dropdownResolution.options.Add(new TMP_Dropdown.OptionData($"{res.x}x{res.y}"));
+        }
+
+        dropdownResolution.value = GetCurrentResolutionIndex();
+        dropdownResolution.RefreshShownValue();
+        dropdownResolution.onValueChanged.AddListener(SetResolution);
+
+        musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
+        sfxCVolumeSlider.onValueChanged.AddListener(SetSFXVolume);
     }
     public void StartGame()
     {
@@ -102,28 +124,21 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void DropDownResolution()
+   public void SetResolution(int index)
     {
-        switch (dropdownResolution.value)
-        {
-            case 0:
-                screenWidth = 1920;
-                screenHeight = 1080;
-                break;
-            case 1:
-                screenWidth = 2560;
-                screenHeight = 1440;
-                break;
-            case 2:
-                screenWidth = 3840;
-                screenHeight = 2160;
-                break;
+        Screen.SetResolution(resolutions[index].x, resolutions[index].y, Screen.fullScreen);
+    }
 
-            default:
-                screenWidth = 1920;
-                screenHeight = 1080;
-                break;
+    private int GetCurrentResolutionIndex()
+    {
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            if (resolutions[i].x == Screen.width && resolutions[i].y == Screen.height)
+            {
+                return i;
+            }
         }
+        return 0;
     }
     public void BackMainMenu()
     {
