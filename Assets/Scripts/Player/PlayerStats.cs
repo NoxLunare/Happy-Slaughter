@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
 
     public float currentHealth;
     public float maxHealth = 100f;
-    public float overheating;
+    public float overheating = 0;
 
     public int currentExp;
     public int maxExp;
@@ -41,6 +41,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+   
     }
 
   
@@ -92,12 +93,12 @@ public class PlayerStats : MonoBehaviour
         {
             overheating = 0;
         }
-
-        if (overheating >= 100)
+        else if (overheating >= 100)
         {
             overheating = 100;
 
         }
+
 
         if (overheating >= 80)
         {
@@ -126,7 +127,7 @@ public class PlayerStats : MonoBehaviour
 
         if (overheating <= 100)
         {
-            overheating -= 0.006f;
+            overheating -= 0.030f;
         }
 
        

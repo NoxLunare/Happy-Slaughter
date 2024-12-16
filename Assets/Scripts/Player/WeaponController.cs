@@ -30,7 +30,7 @@ public class WeaponController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            PlayerStats.Instance.GetOverheating(5);
+            PlayerStats.Instance.GetOverheating(2);
             AmmoController();
 
             if (!isSoundShoot && !PauseGame.Instance.isActiveMenuUI)
